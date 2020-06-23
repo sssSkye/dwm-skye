@@ -13,10 +13,14 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+static const char col_nord1[]	    = "#D8DEE9";
+static const char col_nord2[]	    = "#2E3440";
+static const char col_nord3[]	    = "#434C5E";
+static const char col_nord4[]	    = "#A3BE8C";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_nord1, col_nord2, col_gray2 },
+	[SchemeSel]  = { col_nord3, col_nord4,  col_cyan  },
 };
 
 /* tagging */
@@ -56,7 +60,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const char *xblincrcmd[] = { "xbacklight -inc 10", NULL };
