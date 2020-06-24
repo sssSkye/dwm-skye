@@ -15,4 +15,6 @@ Run the following (You might need root access):
 
     make clean install
 
-
+TODO
+----
+1. Remove gaps patch and replace it with useless gap (https://dwm.suckless.org/patches/uselessgap/)
