@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 4;	/* pixles betweeen windows */
+static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -13,10 +13,10 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const char col_nord1[]	    = "#D8DEE9";
-static const char col_nord2[]	    = "#2E3440";
-static const char col_nord3[]	    = "#434C5E";
-static const char col_nord4[]	    = "#A3BE8C";
+static const char col_nord1[]       = "#D8DEE9";
+static const char col_nord2[]       = "#2E3440";
+static const char col_nord3[]       = "#434C5E";
+static const char col_nord4[]       = "#A3BE8C";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_nord1, col_nord2, col_gray2 },
@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5"};
+static const char *tags[] = { "1", "2", "3", "4", "5" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -63,15 +63,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-static const char *xblincrcmd[] = { "xbacklight -inc 10", NULL };
-static const char *xbldecrcmd[] = { "xbacklight -dec 10", NULL };
-
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = dmenucmd } },
-	{ MODKEY,			XK_v,	   spawn,	   {.v = xblincrcmd } },
-	{ MODKEY|ShiftMask,		XK_v,	   spawn,	   {.v = xbldecrcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
