@@ -25,7 +25,7 @@ static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_ownfg, col_ownbg, col_white },
-	[SchemeSel]  = { col_ownfg, col_ownbg, col_own1  },
+	[SchemeSel]  = { col_own1, col_ownbg, col_own1  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -78,12 +78,17 @@ static const char *termcmd[]    = { "st", NULL };
 static const char *lockcmd[]    = { "slock", NULL };
 static const char *browsercmd[] = { "tabbed", "surf", "-pe", NULL };
 
+static const char *setus[]      = { "setxkbmap", "us", NULL };
+static const char *setfi[]      = { "setxkbmap", "fi", NULL };
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_x,      spawn,          {.v = lockcmd } },
     { MODKEY,                       XK_s,      spawn,          {.v = browsercmd } },
+    { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = setfi } },
+    { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = setus } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
