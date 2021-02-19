@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+/* for hardware multimedia keys */
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
@@ -81,6 +84,10 @@ static const char *browsercmd[] = { "tabbed", "surf", "-pe", NULL };
 static const char *setus[]      = { "setxkbmap", "us", NULL };
 static const char *setfi[]      = { "setxkbmap", "fi", NULL };
 
+static const char *volup[]      = { "amixer", "-q", "-D", "pulse", "set", "Master", "5%+", "unmute", NULL};
+static const char *voldown[]    = { "amixer", "-q", "-D", "pulse", "set", "Master", "5%-", "unmute", NULL};
+static const char *volmute[]    = { "amixer", "-q", "-D", "pulse", "set", "Master", "toggle", NULL};
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = dmenucmd } },
@@ -89,6 +96,9 @@ static Key keys[] = {
     { MODKEY,                       XK_s,      spawn,          {.v = browsercmd } },
     { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = setfi } },
     { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = setus } },
+    { 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volup } },
+    { 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = voldown } },
+    { 0,                XF86XK_AudioMute,      spawn,          {.v = volmute } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
