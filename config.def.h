@@ -11,24 +11,16 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=20" };
-static const char dmenufont[]       = "monospace:size=20";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
 /* my own colors */
 static const char col_white[]       = "#ffffff";
-static const char col_own1[]        = "#c97799";
-static const char col_ownfg[]       = "#d6b6ca";
-static const char col_ownbg[]       = "#2e3440";
+static const char col_black[]       = "#000000";
 /* end of my own colors */
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_ownfg, col_ownbg, col_white },
-	[SchemeSel]  = { col_own1, col_ownbg, col_own1  },
+	[SchemeNorm] = { col_white, col_black, col_black },
+	[SchemeSel]  = { col_white, col_black, col_white },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */

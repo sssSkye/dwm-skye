@@ -1,8 +1,6 @@
 #!/bin/sh
 
-## Wallpaper
-feh --bg-fill -z ~/wallpapers/*/* &
+bash ~/bin/randompaperview ~/wallpapers/paperview/\*/ &
 
-## Compositor
-picom &
+light -S 25 &
 
