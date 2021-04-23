@@ -12,15 +12,15 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=20" };
 /* my own colors */
-static const char col_white[]       = "#ffffff";
-static const char col_black[]       = "#000000";
+static const char col_bg[]       = "#2E3440";
+static const char col_fg[]       = "#C97799";
 /* end of my own colors */
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_black, col_black },
-	[SchemeSel]  = { col_white, col_black, col_white },
+	[SchemeNorm] = { col_fg, col_bg, col_bg },
+	[SchemeSel]  = { col_fg, col_bg, col_fg },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
