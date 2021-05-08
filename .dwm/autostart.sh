@@ -4,5 +4,7 @@ bash ~/bin/randompaperview ~/wallpapers/paperview/\*/ &
 
 bash ~/bin/dwmstatus &
 
-light -S 25 &
+if [ -x "$(command -v light)" ]; then
+    light -S 25 &
+fi
 
